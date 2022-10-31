@@ -11,6 +11,6 @@ This repository includes Examples of R scripts to generate the DCCT-based simula
 - script "example_JMfit.r", which illustates an application of a Joint Model for L=2 longitudinal quantitative traits (HbA1c, SBP), and K=2 time-to-event traits (DR, DN) for causal SNP5A (with direct and indirect effects on time-to-DN via SBP) to one simulation replicate from "DCCT_based_simulated_data_reps5.Rdata"
 - script "example_JMfit_subfunctions.r" which includes the sub-functions used to fit the Joint Model 
 - script "mvlme.r" that includes the function mvlme() to fit a multivariate longitudinal mixed model, from the JoineRML R package (Version 0.4.2 on CRAN)  
-- output file "JM_results_SNP5A_replicate1.Rdata" produced by "example_JMfit.r", that includes the joint model results 
+- output file "JM_results_SNP5A_replicate1.Rdata" produced by "example_JMfit.r", that includes the joint model results for SNP5 
 
-Comments inside the scripts help to interpret the outputs
+Comments inside the scripts help to interpret the output
