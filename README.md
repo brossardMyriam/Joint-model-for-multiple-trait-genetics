@@ -10,7 +10,7 @@ This repository includes two main directories:
 - "DCCT_based_simulated_data_reps5.Rdata", an example of output produced by  "data_simulation.r" for R=5 data replicates.
 
 ## ./JM_analysis, includes:
-- the script "example_JMfit.r", which illustates an example of application of a Joint Model for L=2 longitudinal quantitative traits (HbA1c, SBP), and K=2 time-to-event traits (DR, DN) for causal SNP5A (with direct and indirect effects on time-to-DN via SBP) to one simulation replicate from "DCCT_based_simulated_data_reps5.Rdata"
-- the script "example_JMfit_subfunctions.r" which includes the sub-functions used to fit the Joint Model 
+- the script "example_JMfit.r", which illustates an example of application of a Joint Model for L=2 longitudinal quantitative traits (HbA1c, SBP), and K=2 time-to-event traits (DR, DN) for causal SNP5A (with direct and indirect effects on time-to-DN via SBP) to one simulation replicate from "DCCT_based_simulated_data_reps5.Rdata".
+- the script "example_JMfit_subfunctions.r" which includes the sub-functions used to fit the Joint Model .
 - the script "mvlme.r" that includes the function mvlme() to fit a multivariate longitudinal mixed model, from the JoineRML R package (Version 0.4.2 on CRAN)  
-- the output file "JM_results_SNP5A_replicate1.Rdata" produced by "example_JMfit.r", that includes the joint model results for SNP5 with comments in "example_JMfit.r for the interpretation of the output
+- the output file "JM_results_SNP5A_replicate1.Rdata" produced by "example_JMfit.r", that includes the joint model results for SNP5 with comments in "example_JMfit.r" for the interpretation of the output.
