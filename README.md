@@ -1,6 +1,6 @@
 # Joint-model-for-multiple-trait-genetics
 
-This repository includes some Examples of R scripts to generate the DCCT-based simulated datasets under a multiple-trait genetics scenario, as described in the paper (under revision): "Characterization of direct and/or indirect genetic associations for multiple traits in longitudinal studies of disease progression" by Myriam Brossard, Andrew D. Paterson, Osvaldo Espin-Garcia, Radu V. Craiu, Shelley B. Bull, & to fit a Joint Model for multiple longitudinal and multiple time-to-event traits using the two-stage approach with estimation of the full variance-covariance matrix by the bootstrap. 
+This repository includes some Examples of R scripts to generate the DCCT-based simulated datasets under a multiple-trait genetics scenario, as described in the paper (under revision): "Characterization of direct and/or indirect genetic associations for multiple traits in longitudinal studies of disease progression" by Brossard M, Paterson AD, Espin-Garcia O, Craiu RV, Bull SB; & to fit the proposed Joint Model for multiple longitudinal and multiple time-to-event traits using the two-stage approach with estimation of the full variance-covariance matrix by the bootstrap. 
 
 This repository includes two main directories:
 
