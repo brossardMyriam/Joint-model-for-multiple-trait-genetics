@@ -1,19 +1,21 @@
-# This script generates an artificial DCCT longitudinal dataset to illustrate our simulation procedure
-# N=667 individuals, L=2 QTs (hba1c, and SBP) and 2 baseline factors (sex and T1D duration)
+# generate_artificial_DCCT_longdata.r
+# This script generates an artificial DCCT longitudinal dataset used as a replacement of the original & confidential DCCT data, to illustrate our simulation procedure
+# It includes N=667 DCCT individuals & visit times, simulated longitudinal values for L=2 longitudinal QTs (HbA1c, systolic blood pressure (SBP)) observed in DCCT, one completely simulated longitudinal trait and 2 baseline covariates (sex & T1D duration)
+# longitudinal & baseline data are generated from the DCCT dataset
 
 set.seed(13857)
 ipak <- function(pkg){ sapply(pkg, require, character.only = TRUE) }
 packages <- c( "iterators","foreach","doSNOW","snow","survival","eha","mvtnorm", "nlme","psychTools","MASS" )
 ipak( packages )
 
-# Original DCCT data - with longitudinal HbA1c, SBP values & baseline covariates 
-long_data <- read.delim("./../../DCCT_data/2.Data_Processed/DCCT_longdata_for_simu_nomiss.tsv",sep=" ")[,-c(12,13)]
+# DCCT data - with observed longitudinal HbA1c, SBP values & baseline covariates 
+long_data <- read.delim("/home/bulllab/mbrossard/Joint_models/DCCT_data/2.Data_Processed/DCCT_longdata_for_simu_nomiss.tsv",sep=" ")[,-c(12,13)]
 long_data$SEX <- long_data$SEX-1
 DCCT_baseline<-unique(long_data[,c("PATIENT","SEX","DURATION_Years")])
 DCCT_baseline$PATIENT_OLD<-DCCT_baseline$PATIENT
 DCCT_long<-long_data[,c("PATIENT","obstime")]
 
-# Generation of the aritificial longitudinal dataset that mimicks DCCT
+# Generation of the aritificial longitudinal dataset based on the original DCCT dataset
 n<-nrow(DCCT_baseline) ; i_n<-1
 ARTIFICIAL_baseline<-as.data.frame(cbind(PATIENTOLD=DCCT_baseline$PATIENT,PATIENT=1:n,
 	SEX=rbinom(n,1,mean(DCCT_baseline$SEX)),
@@ -35,6 +37,22 @@ lmefitl1 <- lme( hba ~ obstime , random = ~ 1+obstime|PATIENT,
 parms_hba <- lapply(list(beta = fixef(lmefitl1), tau0=VarCorr(lmefitl1)[1,2],
 	tau1=VarCorr(lmefitl1)[2,2], 	tau01=VarCorr(lmefitl1)[2,3], 
 	sigma2=VarCorr(lmefitl1)[3,1]), function(x) { as.numeric(as.character(x)) })
+
+# parms_hba
+#$beta
+#[1] 9.01461860 0.02522669
+
+#$tau0
+#[1] 1.473488
+
+#$tau1
+# [1] 0.2652313
+
+#$tau01
+#[1] -0.515
+
+#$sigma2
+#[1] 0.6253529
 	
 ARTIFICIAL_long <- do.call(rbind,by(ARTIFICIAL_long,INDICES=list(ARTIFICIAL_long$PATIENT),
   FUN=function(U){
@@ -59,6 +77,23 @@ lmefitl2 <- lme( SBP ~ obstime + SEX , random = ~ 1+obstime|PATIENT,
 parms_sbp <- lapply(list(beta = fixef(lmefitl2), tau0=VarCorr(lmefitl2)[1,2], 
 	tau1=VarCorr(lmefitl2)[2,2], tau01=VarCorr(lmefitl2)[2,3], 
 	sigma2=VarCorr(lmefitl2)[3,1]), function(x) { as.numeric(as.character(x)) })
+
+# parms_sbp
+#$beta
+#[1] 110.3060360   0.3212361   6.2941671
+
+#$tau0
+#[1] 8.00707
+
+#$tau1
+#[1] 1.136445
+
+#$tau01
+#[1] -0.347
+
+#$sigma2
+#[1] 72.07548
+
 	
 ARTIFICIAL_long <- do.call(rbind,by(ARTIFICIAL_long,INDICES=list(ARTIFICIAL_long$PATIENT),
   FUN=function(U){
