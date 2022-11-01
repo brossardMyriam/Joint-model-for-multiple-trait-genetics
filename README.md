@@ -11,7 +11,7 @@ This repository includes two main directories:
 - "DCCT_ARTIFICIAL_longQT.Rdata", is an aritificial DCCT dataset with simulated longitudinal values & baseline covariates (SEX, T1D_diagnosis) in N=667 DCCT individuals, provided as a replacement of the confidential DCCT dataset to illustrate the simulation procedure (this dataset was generated using "generate_artificial_DCCT_longdata.r").
 - "DCCT_based_simulated_data_reps5.Rdata", shows an example of output produced by "data_simulation.r" for R=5 data replicates.
 
-## ./JM_analysis, includes:
+## ./JM_analysis:
 - "example_JMfit.r", illustates an example of application of a Joint Model for L=2 longitudinal quantitative traits (HbA1c, SBP), and K=2 time-to-event traits (DR, DN) for causal SNP5 (with direct and indirect effects on time-to-DN via SBP) to one simulation replicate from "DCCT_based_simulated_data_reps5.Rdata".
 - "example_JMfit_subfunctions.r", includes the sub-functions used to fit the proposed Joint Model.
 - "mvlme.r", includes the function mvlme() to fit a multivariate longitudinal mixed model, from the JoineRML R package (Version 0.4.2 on CRAN)  
