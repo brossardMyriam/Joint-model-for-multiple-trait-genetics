@@ -6,7 +6,7 @@ This repository includes some Examples of R scripts to generate the DCCT-based s
 
 This repository includes two main directories:
 
-## ./data_simulation:
+## ./simulation:
 - "data_simulation.r" is the the R script used to generate R=1000 data replicates of N=667 DCCT individuals with K=2 simulated time-to-T1D complications (retinopathy (referred as DR), nephropathy (referred as DN)) & simulated genotypes at M=5 causal SNPs (referred as "SNP1A to SNP5A") with direct and/or indirect effects on the time-to-event traits via L=3 longitudinal risk factors: 2 observed in DCCT (HbA1c, systolic blood pressure (SBP)) and one simulated (U), under scenario from Fig. 3 in Brossard et al. This script also simulates genotypes at 5 SNPs with the same MAFs as SNP1A-SNP5A but under the global null genetic hypothesis (referred as "SNP1R to SNP5R").
 - "DCCT_ARTIFICIAL_longQT.Rdata", is an aritificial DCCT dataset with simulated longitudinal values & baseline covariates (SEX, T1D_diagnosis) in N=667 DCCT individuals, provided as a replacement of the confidential DCCT dataset to illustrate the simulation procedure (this dataset was generated using "generate_artificial_DCCT_longdata.r").
 - "DCCT_based_simulated_data_reps5.Rdata", shows an example of output produced by "data_simulation.r" for R=5 data replicates.
