@@ -1,8 +1,8 @@
-# Brossard  et al (manucript under revision) -  “Characterization of direct and/or indirect genetic associations for multiple traits in longitudinal studies of disease progression”. 
+# Reference: Brossard  et al (manucript under revision) -  “Characterization of direct and/or indirect genetic associations for multiple traits in longitudinal studies of disease progression”. 
 # Illustration of an application of the joint model for L=2 longitudinal quantitative (HbA1c, SBP) & K=2 time-to-event traits in the simulated dataset with data_simulation.r
 # with Sex as a covariate for SBP & T1D_duration as a covariate for both time-to-event traits 
 # As described in Brossard et al, we used a two-stage approach with estimation of the variance-covariance matrix by bootstrap 
-# For this illustration, we focus on SNP5 which has a direct effect on time-to-DN (k=2) and an indirect effect via SBP longitudinal risk factor (l=2) - see Fig 3
+# For this illustration, we focus on SNP5 simulated with a direct effect on time-to-DN (k=2) and an indirect effect via SBP longitudinal risk factor (l=2) - see Fig 3
 # Sub-models specified in this application of joint model 
 # l1: hbac ~ bi01 + b01 +(b11 + bi11)*obstime + bg1*SNP5A
 # l2: sbp ~ bi02 + b02 +(b12 + bi12)*obstime + b22*sex_2 +bg2*SNP5A
