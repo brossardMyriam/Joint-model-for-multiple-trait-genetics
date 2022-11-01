@@ -1,6 +1,6 @@
 # Brossard  et al (manucript under revision) -  “Characterization of direct and/or indirect genetic associations for multiple traits in longitudinal studies of disease progression”. 
 # Example of R script to generate the R=1000 replicates of DCCT-based simulated datasets under the scenario from Fig. 3 using the simulation algorithm described in Fig.4 (with details in Supplementary Information 1)
-# Note: For this illustration, we have replaced the original DCCT data by an artitificial dataset simulated based on DCCT
+# Note: For this illustration, we have replaced the original DCCT data by an artitificial dataset simulated based on DCCT (see generate_artificial_DCCT_longdata.r for details)
 
 set.seed(20221028)
 ipak <- function(pkg){ sapply(pkg, require, character.only = TRUE) }
