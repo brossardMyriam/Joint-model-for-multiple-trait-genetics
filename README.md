@@ -1,6 +1,6 @@
 # Joint-model-for-multiple-trait-genetics
 
-Reference (paper under revision): "Characterization of direct and/or indirect genetic associations for multiple traits in longitudinal studies of disease progression" by Brossard M, Paterson AD, Espin-Garcia O, Craiu RV and Bull SB. 
+Reference: "Characterization of direct and/or indirect genetic associations for multiple traits in longitudinal studies of disease progression" by Brossard M, Paterson AD, Espin-Garcia O, Craiu RV and Bull SB, published in Genetics (https://academic.oup.com/genetics/advance-article-abstract/doi/10.1093/genetics/iyad119/7209055?redirectedFrom=fulltext)
 
 This repository includes some Examples of R scripts to generate the DCCT-based simulated datasets under a multiple-trait genetics scenario (see Figs 3 and 4 in Brossard et al); & to fit the proposed Joint Model for multiple longitudinal and multiple time-to-event traits using a two-stage approach with estimation of the full variance-covariance matrix by the bootstrap. 
 
